@@ -1,643 +1,1292 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Devi Nyaupane | Financial Analyst Portfolio</title>
+
 <meta name="description" content="Devi Nyaupane — Financial Analyst, FP&A, Data Analyst. MS Finance & Analytics, Santa Clara University. Python, SQL, Tableau, Excel, DCF Modeling.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
+
 *{box-sizing:border-box;margin:0;padding:0}
+
 :root{
-  --navy:#f5efe7;--navy2:#ede4d8;--navy3:#e3d5c4;
-  --gold:#b36b45;--gold2:#c8845e;
-  --blue:#7a9bbf;--green:#5a8a6a;--red:#c0645a;
-  --text:#4a382b;--muted:#8c7a6d;
-  --border:rgba(179,107,69,0.2);--soft:rgba(74,56,43,0.05)
+
+  --navy:#07111e;--navy2:#0c1d36;--navy3:#122448;
+
+  --gold:#c9a84c;--gold2:#e8c870;
+
+  --blue:#4a9eff;--green:#10d48e;--red:#ff6b6b;
+
+  --text:#e2e8f2;--muted:#6b82a0;
+
+  --border:rgba(201,168,76,0.15);--soft:rgba(255,255,255,0.05)
+
 }
-html,body{height:100%;width:100%;font-family:'Inter',sans-serif;background:#f5efe7;margin:0;padding:0;overflow:hidden}
+
+html,body{height:100%;width:100%;font-family:'Inter',sans-serif;background:#04080f;margin:0;padding:0;overflow:hidden}
+
 .wb{background:var(--navy);color:var(--text);display:flex;flex-direction:column;width:100vw;height:100vh;overflow:hidden}
 
+
+
 /* TOPBAR */
-.topbar{background:linear-gradient(90deg,#b36b45,#c8845e);padding:9px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);flex-shrink:0}
+
+.topbar{background:linear-gradient(90deg,var(--navy2),var(--navy3));padding:9px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);flex-shrink:0}
+
 .tb-l{display:flex;align-items:center;gap:12px}
-.dn-b{background:#fff;color:var(--gold);font-weight:800;font-size:11px;padding:4px 9px;border-radius:4px;letter-spacing:0.5px}
+
+.dn-b{background:var(--gold);color:var(--navy);font-weight:800;font-size:11px;padding:4px 9px;border-radius:4px;letter-spacing:0.5px}
+
 .tb-t{font-size:12px;font-weight:600;color:var(--gold)}
+
 .tb-s{font-size:10px;color:var(--muted);margin-top:1px}
+
 .opill{background:rgba(16,212,142,0.1);border:1px solid rgba(16,212,142,0.25);color:var(--green);font-size:10px;padding:3px 12px;border-radius:20px;display:flex;align-items:center;gap:6px}
+
 .opill::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
 
+
+
 /* RIBBON */
-.ribbon{background:#e8ddd0;border-bottom:1px solid var(--border);display:flex;align-items:stretch;flex-shrink:0;overflow-x:auto}
+
+.ribbon{background:#080f1c;border-bottom:1px solid var(--border);display:flex;align-items:stretch;flex-shrink:0;overflow-x:auto}
+
 .rb{padding:7px 15px;font-size:11px;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;white-space:nowrap;user-select:none}
+
 .rb:hover{color:var(--gold);background:rgba(201,168,76,0.04)}
+
 .rb.arb{color:var(--gold);border-bottom-color:var(--gold);background:rgba(201,168,76,0.06)}
-.rpanel{display:none;background:#f0e8de;border-bottom:1px solid var(--border);padding:9px 18px;gap:10px;align-items:center;flex-wrap:wrap;flex-shrink:0}
+
+.rpanel{display:none;background:#060d18;border-bottom:1px solid var(--border);padding:9px 18px;gap:10px;align-items:center;flex-wrap:wrap;flex-shrink:0}
+
 .rpanel.open{display:flex}
-.rb-btn{background:#fff;border:1px solid rgba(179,107,69,0.3);color:var(--text);font-size:10px;padding:5px 13px;border-radius:4px;cursor:pointer;transition:all 0.2s;white-space:nowrap}
-.rb-btn:hover{background:rgba(179,107,69,0.1);border-color:var(--gold);color:var(--gold)}
-.rb-inp{background:#fff;border:1px solid rgba(179,107,69,0.3);color:var(--text);font-size:11px;padding:5px 11px;border-radius:4px;outline:none;width:260px}
+
+.rb-btn{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:var(--text);font-size:10px;padding:5px 13px;border-radius:4px;cursor:pointer;transition:all 0.2s;white-space:nowrap}
+
+.rb-btn:hover{background:rgba(201,168,76,0.1);border-color:var(--gold);color:var(--gold)}
+
+.rb-inp{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:var(--text);font-size:11px;padding:5px 11px;border-radius:4px;outline:none;width:260px}
+
 .rb-inp:focus{border-color:var(--gold);background:rgba(201,168,76,0.05)}
+
 .rb-inp::placeholder{color:var(--muted);font-size:10px}
-.aout{background:rgba(179,107,69,0.08);border:1px solid var(--border);border-radius:6px;padding:9px 14px;font-size:11px;color:var(--gold);max-width:440px;line-height:1.7;display:none}
+
+.aout{background:rgba(201,168,76,0.08);border:1px solid var(--border);border-radius:6px;padding:9px 14px;font-size:11px;color:var(--gold);max-width:440px;line-height:1.7;display:none}
+
 .aout.show{display:block;animation:pop 0.3s ease}
 
+
+
 /* FORMULA BAR */
-.fbar{background:#ede4d8;padding:5px 18px;display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(255,255,255,0.04);flex-shrink:0}
-.fref{background:#e3d5c4;color:var(--gold);font-size:10px;font-weight:600;padding:2px 9px;border-radius:3px;font-family:'Courier New',monospace;min-width:44px;text-align:center}
+
+.fbar{background:#050c15;padding:5px 18px;display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(255,255,255,0.04);flex-shrink:0}
+
+.fref{background:var(--navy3);color:var(--gold);font-size:10px;font-weight:600;padding:2px 9px;border-radius:3px;font-family:'Courier New',monospace;min-width:44px;text-align:center}
+
 .fx{color:var(--muted);font-size:11px;font-style:italic}
+
 .fval{color:#7ec8a0;font-size:10px;font-family:'Courier New',monospace;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
+
+
 /* VIEWPORT */
-.viewport{flex:1 0 auto;position:relative;min-height:500px}
+
+.viewport{flex:1;overflow:hidden;position:relative;min-height:0}
+
 .sheet{position:absolute;top:0;left:0;right:0;bottom:0;overflow-y:auto;background:var(--navy);opacity:0;pointer-events:none;transition:opacity 0.35s ease,transform 0.35s cubic-bezier(0.4,0,0.2,1);transform:translateX(60px)}
+
 .sheet.active{opacity:1;pointer-events:all;transform:translateX(0)}
+
 .sheet.exit-l{opacity:0;transform:translateX(-60px)}
 
+
+
 /* COVER */
-.hero{background:linear-gradient(135deg,#b36b45 0%,#9a5a38 100%);padding:18px 22px;display:flex;gap:18px;align-items:flex-start;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+
+.hero{background:linear-gradient(135deg,var(--navy2) 0%,var(--navy3) 100%);padding:18px 22px;display:flex;gap:18px;align-items:flex-start;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+
 .hero-ring{position:absolute;top:-80px;right:-80px;width:280px;height:280px;border:1px solid rgba(201,168,76,0.06);border-radius:50%}
+
 .hero-ring2{position:absolute;top:-40px;right:-40px;width:160px;height:160px;border:1px solid rgba(201,168,76,0.04);border-radius:50%}
+
 .photo-wrap{flex-shrink:0;position:relative}
+
 .photo{width:62px;height:62px;border-radius:8px;background:linear-gradient(135deg,var(--navy3),#1e3a6e);border:2px solid rgba(201,168,76,0.3);display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;color:var(--gold);overflow:hidden}
+
 .photo img{width:100%;height:100%;object-fit:cover;border-radius:8px}
+
 .photo-dot{position:absolute;bottom:-4px;right:-4px;background:var(--green);width:14px;height:14px;border-radius:50%;border:2px solid var(--navy2)}
+
 .hero-text{flex:1;position:relative;z-index:1}
+
 .htag{display:inline-flex;align-items:center;gap:5px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);color:var(--gold);font-size:9px;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:1px;margin-bottom:9px}
+
 .hname{font-size:22px;font-weight:800;color:#fff;line-height:1.1;margin-bottom:3px}
-.hname span{color:#ffd4b8}
+
+.hname span{color:var(--gold)}
+
 .hrole{font-size:11px;color:var(--muted);margin-bottom:13px}
+
 .hpills{display:flex;gap:7px;flex-wrap:wrap}
+
 .hp{font-size:9px;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,255,255,0.08);color:#aab8cc;background:rgba(255,255,255,0.04)}
+
 .hp.g{background:rgba(201,168,76,0.1);border-color:rgba(201,168,76,0.25);color:var(--gold)}
 
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(179,107,69,0.1)}
-.kpi{background:#ffffff;padding:10px 12px;text-align:center;cursor:pointer;transition:background 0.2s;border-bottom:1px solid rgba(179,107,69,0.1)}
-.kpi:hover{background:#fdf6f0}
+
+
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.04)}
+
+.kpi{background:var(--navy);padding:10px 12px;text-align:center;cursor:pointer;transition:background 0.2s}
+
+.kpi:hover{background:var(--navy2)}
+
 .kv{font-size:20px;font-weight:700;color:var(--gold);line-height:1}
+
 .kl{font-size:9px;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:0.6px}
+
 .ks{font-size:9px;color:#2d4a6a;margin-top:2px}
-.tagline-bar{background:#fff;padding:9px 22px;border-top:1px solid var(--border);border-bottom:1px solid rgba(255,255,255,0.04)}
+
+.tagline-bar{background:var(--navy2);padding:9px 22px;border-top:1px solid var(--border);border-bottom:1px solid rgba(255,255,255,0.04)}
+
 .tagline{font-size:11px;color:var(--text);line-height:1.5;font-style:italic}
+
 .tagline span{color:var(--gold);font-style:normal;font-weight:600}
+
 .nav-hint{background:rgba(201,168,76,0.05);border-top:1px solid var(--border);padding:6px 20px;display:flex;align-items:center;justify-content:center;gap:10px;flex-shrink:0}
+
 .nh{font-size:10px;color:var(--muted)}
+
 .nh-tabs{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}
+
 .nh-tab{font-size:10px;color:var(--gold);background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);padding:3px 10px;border-radius:10px;cursor:pointer;transition:all 0.2s}
+
 .nh-tab:hover{background:rgba(201,168,76,0.15)}
 
+
+
 /* PL TABLE */
+
 .tbl-wrap{overflow-x:auto}
+
 table.pl{width:100%;border-collapse:collapse;min-width:600px}
+
 table.pl th,table.pl td{padding:8px 15px;font-size:11px;border-bottom:1px solid rgba(255,255,255,0.04);white-space:nowrap}
-table.pl th{background:#ede4d8;color:var(--muted);font-weight:500;font-size:9px;text-transform:uppercase;letter-spacing:0.8px;position:sticky;top:0;z-index:2}
-.sr td{background:rgba(179,107,69,0.08);color:var(--gold);font-weight:600;font-size:11px;border-top:1px solid rgba(201,168,76,0.15);border-bottom:1px solid rgba(201,168,76,0.15)}
-.tr td{background:#ede4d8;font-weight:600;border-top:2px solid rgba(201,168,76,0.3)}
-.qr td{padding:14px 18px;color:var(--muted);font-style:italic;font-size:11px;background:rgba(179,107,69,0.04);border-left:3px solid var(--gold);line-height:1.7}
+
+table.pl th{background:var(--navy2);color:var(--muted);font-weight:500;font-size:9px;text-transform:uppercase;letter-spacing:0.8px;position:sticky;top:0;z-index:2}
+
+.sr td{background:rgba(201,168,76,0.06);color:var(--gold);font-weight:600;font-size:11px;border-top:1px solid rgba(201,168,76,0.15);border-bottom:1px solid rgba(201,168,76,0.15)}
+
+.tr td{background:var(--navy2);font-weight:600;border-top:2px solid rgba(201,168,76,0.3)}
+
+.qr td{padding:14px 18px;color:var(--muted);font-style:italic;font-size:11px;background:rgba(201,168,76,0.03);border-left:3px solid var(--gold);line-height:1.7}
+
 .bdg{display:inline-block;padding:2px 8px;border-radius:10px;font-size:9px;font-weight:500}
-.bg{background:rgba(90,138,106,0.12);color:#3a7a52;border:1px solid rgba(90,138,106,0.3)}
-.bb{background:rgba(122,155,191,0.12);color:#4a6e9a;border:1px solid rgba(122,155,191,0.3)}
-.bo{background:rgba(179,107,69,0.1);color:var(--gold);border:1px solid rgba(179,107,69,0.3)}
-.bm{background:rgba(140,122,109,0.08);color:var(--muted);border:1px solid rgba(140,122,109,0.2)}
+
+.bg{background:rgba(16,212,142,0.1);color:#34d399;border:1px solid rgba(16,212,142,0.2)}
+
+.bb{background:rgba(74,158,255,0.1);color:#93c5fd;border:1px solid rgba(74,158,255,0.2)}
+
+.bo{background:rgba(201,168,76,0.1);color:var(--gold);border:1px solid rgba(201,168,76,0.2)}
+
+.bm{background:rgba(255,255,255,0.04);color:var(--muted);border:1px solid rgba(255,255,255,0.08)}
+
+
 
 /* SKILLS */
-.sk-section{padding:18px 22px;border-bottom:1px solid rgba(179,107,69,0.1)}
+
+.sk-section{padding:18px 22px;border-bottom:1px solid rgba(255,255,255,0.04)}
+
 .sk-title{font-size:9px;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+
 .sk-title::after{content:'';flex:1;height:1px;background:rgba(201,168,76,0.15)}
+
 .sk-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px 24px}
+
 .srow{display:flex;align-items:center;gap:9px}
+
 .sname{font-size:11px;color:var(--text);min-width:116px}
-.sbg{flex:1;height:5px;background:rgba(179,107,69,0.15);border-radius:3px;overflow:hidden}
+
+.sbg{flex:1;height:5px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden}
+
 .sbar{height:100%;border-radius:3px;width:0;transition:width 1.2s ease}
+
 .spct{font-size:10px;color:var(--muted);min-width:28px;text-align:right}
+
 .soft-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.soft-card{background:#fff;border:1px solid rgba(179,107,69,0.15);border-radius:8px;padding:14px;transition:all 0.2s;cursor:default}
-.soft-card:hover{border-color:rgba(179,107,69,0.4);background:rgba(179,107,69,0.05);transform:translateY(-2px)}
+
+.soft-card{background:var(--navy2);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:14px;transition:all 0.2s;cursor:default}
+
+.soft-card:hover{border-color:rgba(201,168,76,0.3);background:rgba(201,168,76,0.04);transform:translateY(-2px)}
+
 .soft-icon{font-size:22px;margin-bottom:7px}
+
 .soft-name{font-size:11px;font-weight:600;color:var(--text);margin-bottom:4px}
+
 .soft-desc{font-size:10px;color:var(--muted);line-height:1.5}
 
+
+
 /* PROJECTS */
-.proj-list{display:flex;flex-direction:column;gap:1px;background:rgba(179,107,69,0.1)}
-.pcard{background:#fff;padding:18px 22px;border-left:3px solid transparent;transition:all 0.2s}
-.pcard:hover{background:#fdf6f0}
+
+.proj-list{display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,0.03)}
+
+.pcard{background:var(--navy);padding:18px 22px;border-left:3px solid transparent;transition:all 0.2s}
+
+.pcard:hover{background:var(--navy2)}
+
 .pcard.done{border-left-color:var(--green)}
+
 .pcard.wip{border-left-color:var(--blue)}
+
 .pcard.plan{border-left-color:#2d4a6a}
+
 .ph{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+
 .pnum{font-size:10px;color:var(--muted);font-family:'Courier New',monospace}
+
 .ptitle{font-size:14px;font-weight:600;color:#fff;margin-bottom:5px}
+
 .pticker{color:var(--gold)}
+
 .pdesc{font-size:11px;color:var(--muted);line-height:1.6;margin-bottom:10px}
+
 .ptools{display:flex;gap:5px;flex-wrap:wrap}
+
 .tool{font-size:9px;padding:2px 8px;background:rgba(74,158,255,0.08);color:#93c5fd;border:1px solid rgba(74,158,255,0.18);border-radius:3px}
+
 .plink{font-size:10px;color:var(--blue);text-decoration:none}
+
 .plink:hover{color:var(--gold)}
 
+
+
 /* LEADERSHIP */
-.lead-section{padding:18px 22px;border-bottom:1px solid rgba(179,107,69,0.1)}
+
+.lead-section{padding:18px 22px;border-bottom:1px solid rgba(255,255,255,0.04)}
+
 .lead-title{font-size:9px;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+
 .lead-title::after{content:'';flex:1;height:1px;background:rgba(201,168,76,0.15)}
+
 .lead-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.lcard{background:#fff;border:1px solid rgba(179,107,69,0.15);border-radius:8px;padding:15px;transition:all 0.2s}
-.lcard:hover{border-color:rgba(179,107,69,0.4);transform:translateY(-2px)}
+
+.lcard{background:var(--navy2);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:15px;transition:all 0.2s}
+
+.lcard:hover{border-color:rgba(201,168,76,0.3);transform:translateY(-2px)}
+
 .lcard-icon{font-size:24px;margin-bottom:8px}
+
 .lcard-title{font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px}
+
 .lcard-org{font-size:10px;color:var(--gold);margin-bottom:7px}
+
 .lcard-desc{font-size:10px;color:var(--muted);line-height:1.5}
+
 .edu-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.ecard{background:#fff;border:1px solid rgba(179,107,69,0.2);border-radius:8px;padding:15px;position:relative;overflow:hidden}
+
+.ecard{background:var(--navy2);border:1px solid rgba(201,168,76,0.15);border-radius:8px;padding:15px;position:relative;overflow:hidden}
+
 .ecard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2))}
+
 .ecard.blue::before{background:linear-gradient(90deg,var(--blue),#93c5fd)}
+
 .ecard.green-card::before{background:linear-gradient(90deg,var(--green),#34d399)}
+
 .ecard-deg{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px}
+
 .ecard-school{font-size:11px;color:var(--gold);margin-bottom:3px}
+
 .ecard-date{font-size:10px;color:var(--muted);margin-bottom:7px}
+
 .ecard-note{font-size:10px;color:var(--muted);line-height:1.5}
 
+
+
 /* ABOUT */
-.about-hero{background:linear-gradient(135deg,#b36b45,#9a5a38);padding:22px 24px;border-bottom:1px solid var(--border);display:flex;gap:18px;align-items:center}
+
+.about-hero{background:linear-gradient(135deg,var(--navy2),var(--navy3));padding:22px 24px;border-bottom:1px solid var(--border);display:flex;gap:18px;align-items:center}
+
 .about-photo{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--navy3),#1e3a6e);border:2px solid rgba(201,168,76,0.3);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:var(--gold);flex-shrink:0;overflow:hidden}
+
 .about-photo img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+
 .about-intro{font-size:12px;color:var(--text);line-height:1.8}
-.about-intro span{color:#ffd4b8;font-weight:600}
-.int-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(179,107,69,0.1)}
-.int-card{background:#fff;padding:16px 14px;text-align:center;transition:background 0.2s}
-.int-card:hover{background:#fdf6f0}
+
+.about-intro span{color:var(--gold);font-weight:600}
+
+.int-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.04)}
+
+.int-card{background:var(--navy);padding:16px 14px;text-align:center;transition:background 0.2s}
+
+.int-card:hover{background:var(--navy2)}
+
 .int-icon{font-size:26px;margin-bottom:7px}
+
 .int-name{font-size:11px;font-weight:600;color:var(--text);margin-bottom:4px}
+
 .int-desc{font-size:10px;color:var(--muted);line-height:1.4}
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(179,107,69,0.1)}
-.why-card{background:#fff;padding:16px 20px}
+
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.04)}
+
+.why-card{background:var(--navy);padding:16px 20px}
+
 .why-t{font-size:10px;font-weight:600;color:var(--gold);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+
 .why-t::after{content:'';flex:1;height:1px;background:rgba(201,168,76,0.15)}
+
 .why-p{font-size:11px;color:var(--muted);line-height:1.7}
 
+
+
 /* CONTACT SECTION */
-.contact-section{background:#ede4d8;padding:18px 22px;border-top:1px solid var(--border)}
+
+.contact-section{background:var(--navy2);padding:18px 22px;border-top:1px solid var(--border)}
+
 .contact-title{font-size:9px;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:12px}
+
 .contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+
 .c-card{display:flex;align-items:center;gap:10px}
+
 .c-icon{width:30px;height:30px;border-radius:6px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;color:var(--gold)}
+
 .c-label{font-size:9px;color:var(--muted)}
+
 .c-val{font-size:11px;color:var(--gold)}
+
 .c-val a{color:var(--gold);text-decoration:none}
+
 .c-val a:hover{color:var(--gold2);text-decoration:underline}
 
+
+
 /* TABS */
-.tab-bar{background:#e8ddd0;display:flex;align-items:stretch;border-top:1px solid var(--border);overflow-x:auto;flex-shrink:0}
+
+.tab-bar{background:#050b14;display:flex;align-items:stretch;border-top:1px solid var(--border);overflow-x:auto;flex-shrink:0}
+
 .tab{padding:10px 18px;font-size:11px;color:var(--muted);cursor:pointer;border-top:2px solid transparent;transition:all 0.2s;white-space:nowrap;display:flex;align-items:center;gap:6px;user-select:none}
+
 .tab:hover{color:var(--gold);background:rgba(201,168,76,0.04)}
-.tab.active{color:var(--gold);border-top-color:var(--gold);background:rgba(179,107,69,0.12);font-weight:600}
+
+.tab.active{color:var(--gold);border-top-color:var(--gold);background:rgba(201,168,76,0.07);font-weight:500}
+
 .tdot{width:6px;height:6px;border-radius:50%}
 
+
+
 /* STATUS */
-.sbar{background:#e0d4c6;padding:3px 18px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;white-space:nowrap;overflow:hidden}
-.st{font-size:9px;color:#8c7a6d}
+
+.sbar{background:#040a12;padding:3px 18px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;white-space:nowrap;overflow:hidden}
+
+.st{font-size:9px;color:#1e3a5f}
+
 .st-r{display:flex;gap:16px;align-items:center}
 
+
+
 /* ANIMATIONS */
+
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+
 @keyframes pop{from{opacity:0;transform:scale(0.96)}to{opacity:1;transform:scale(1)}}
 
+
+
 /* RESPONSIVE */
+
 @media(max-width:700px){
+
   .sk-grid,.soft-grid,.lead-cards,.edu-cards,.int-grid,.why-grid,.contact-grid{grid-template-columns:1fr}
+
   .hero{flex-direction:column;gap:14px}
+
   .kpis{grid-template-columns:repeat(2,1fr)}
+
   .hname{font-size:20px}
+
 }
+
 </style>
+
 </head>
+
 <body>
+
 <div class="wb">
 
+
+
   <!-- TOPBAR -->
+
   <div class="topbar">
+
     <div class="tb-l">
+
       <div class="dn-b">DN</div>
+
       <div>
-        <div class="tb-t" style="color:#fff">Devi_Nyaupane_Portfolio.xlsx</div>
-        <div class="tb-s" style="color:rgba(255,255,255,0.7)">MS Finance & Analytics · Santa Clara University · San Jose, CA</div>
+
+        <div class="tb-t">Devi_Nyaupane_Portfolio.xlsx</div>
+
+        <div class="tb-s">MS Finance & Analytics · Santa Clara University · San Jose, CA</div>
+
       </div>
+
     </div>
-    <div class="opill" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3);color:#fff">Open to Work</div>
+
+    <div class="opill">Open to Work</div>
+
   </div>
+
+
 
   <!-- RIBBON -->
+
   <div class="ribbon">
+
     <div class="rb arb" id="rb-ask" onclick="toggleRb('ask')">✨ Ask Me Anything</div>
+
     <div class="rb" id="rb-view" onclick="toggleRb('view')">View</div>
+
     <div class="rb" id="rb-filter" onclick="toggleRb('filter')">Filter Skills</div>
+
     <div class="rb" id="rb-hire" onclick="toggleRb('hire')">📩 Hire / Contact</div>
+
   </div>
+
+
 
   <!-- RIBBON PANELS -->
+
   <div class="rpanel open" id="rp-ask">
+
     <span style="font-size:10px;color:var(--muted)">fx =QUERY(Devi,</span>
+
     <input class="rb-inp" id="askIn" placeholder='Try: "Why hire you?" · "Tell me about your masters" · "What projects have you done?"' onkeydown="if(event.key==='Enter')ask()"/>
+
     <button class="rb-btn" onclick="ask()">Run ↵</button>
+
     <div class="aout" id="aout"></div>
+
   </div>
+
   <div class="rpanel" id="rp-view">
+
     <span style="font-size:10px;color:var(--muted)">Jump to sheet:</span>
+
     <button class="rb-btn" onclick="goTab(0)">⊞ Cover</button>
+
     <button class="rb-btn" onclick="goTab(1)">📊 Career P&L</button>
+
     <button class="rb-btn" onclick="goTab(2)">⚙️ Skills</button>
+
     <button class="rb-btn" onclick="goTab(3)">🗂 Projects</button>
+
     <button class="rb-btn" onclick="goTab(4)">🏆 Leadership</button>
+
     <button class="rb-btn" onclick="goTab(5)">👤 About Me</button>
+
   </div>
+
   <div class="rpanel" id="rp-filter">
+
     <span style="font-size:10px;color:var(--muted)">Filter by skill:</span>
+
     <button class="rb-btn" onclick="showFilter('Excel (VBA/Macros) — Advanced. 3-statement models, DCF, budgeting. Core tool at Insync Analytics and Bright Mind. 15–20 models built end-to-end.')">Excel</button>
+
     <button class="rb-btn" onclick="showFilter('Python — Proficient. SEC EDGAR API pull, pandas for data cleaning, matplotlib for charts, SQLite integration. Active in Chewy portfolio project.')">Python</button>
+
     <button class="rb-btn" onclick="showFilter('SQL — Proficient. Financial data storage and querying. Building SQLite DB for Chewy project with income_statement, balance_sheet, KPI tables.')">SQL</button>
+
     <button class="rb-btn" onclick="showFilter('Tableau — Proficient. Built executive dashboard for Extreme Networks (32 peer companies). Building Chewy analysis dashboard for Tableau Public.')">Tableau</button>
+
     <button class="rb-btn" onclick="showFilter('FP&A — Hands-on. Managing FY2026 budget at Bright Mind across 15+ categories. QuickBooks + Salesforce integration. Variance analysis, forecasting.')">FP&A</button>
+
     <button class="rb-btn" onclick="showFilter('DCF / 3-Statement Modeling — Advanced. 15–20 models built end-to-end at Insync Analytics for buy-side hedge fund clients. 35+ maintained quarterly.')">Modeling</button>
+
     <div class="aout" id="fout"></div>
+
   </div>
+
   <div class="rpanel" id="rp-hire">
+
     <span style="font-size:10px;color:var(--muted)">Contact Devi:</span>
+
     <button class="rb-btn" onclick="showHire('📧 devinyaupane1@gmail.com')">✉ Email</button>
+
     <button class="rb-btn" onclick="showHire('📱 408-663-7280')">📱 Phone</button>
+
     <button class="rb-btn" onclick="window.open('https://linkedin.com/in/devi-nyaupane/','_blank')">in LinkedIn ↗</button>
+
     <button class="rb-btn" onclick="goTab(5)">👤 Full About Me</button>
+
     <span style="font-size:10px;color:var(--green)">● Available for interviews immediately · Open to relocation</span>
+
     <div class="aout" id="hout"></div>
+
   </div>
+
+
 
   <!-- FORMULA BAR -->
+
   <div class="fbar">
+
     <span class="fref" id="fref">A1</span>
+
     <span class="fx">fx</span>
+
     <span class="fval" id="fval">="Devi Nyaupane | Financial Analyst | FP&A | Data Analytics | Open to Work"</span>
+
   </div>
 
+
+
   <!-- VIEWPORT -->
+
   <div class="viewport" id="vp">
 
+
+
     <!-- SHEET 0: COVER -->
+
     <div class="sheet active" id="s0">
+
       <div class="hero">
+
         <div class="hero-ring"></div><div class="hero-ring2"></div>
+
         <div class="photo-wrap">
+
           <div class="photo">DN
+
             <!-- REPLACE THE LINE ABOVE WITH THIS IF YOU HAVE A PHOTO:
+
             <img src="photo.jpg" alt="Devi Nyaupane">
+
             -->
+
           </div>
+
           <div class="photo-dot"></div>
+
         </div>
+
         <div class="hero-text">
-          <div class="htag" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3);color:#fff">⊞ ANALYST PROFILE · STRONG BUY · INITIATING COVERAGE</div>
-          <div class="hname" style="color:#fff">Devi <span>Nyaupane</span></div>
-          <div class="hrole" style="color:rgba(255,255,255,0.8)">Financial Analyst · FP&A · Data Analyst (Finance) · Open to Relocation</div>
+
+          <div class="htag">⊞ ANALYST PROFILE · STRONG BUY · INITIATING COVERAGE</div>
+
+          <div class="hname">Devi <span>Nyaupane</span></div>
+
+          <div class="hrole">Financial Analyst · FP&A · Data Analyst (Finance) · Open to Relocation</div>
+
           <div class="hpills">
+
             <span class="hp g">▲ Strong Buy</span>
+
             <span class="hp">3+ Years Experience</span>
+
             <span class="hp">MS Finance & Analytics · SCU</span>
+
             <span class="hp">Mumbai → San Jose, CA</span>
+
             <span class="hp">Python · SQL · Tableau · Excel</span>
+
           </div>
+
         </div>
+
       </div>
+
       <div class="kpis">
+
         <div class="kpi" onclick="setFx('B4','=COUNT(Companies_Covered) → 55+')"><div class="kv">55+</div><div class="kl">Companies Covered</div><div class="ks">NASDAQ · SEC Filings</div></div>
+
         <div class="kpi" onclick="setFx('C4','=Models_Built + Maintained → 35+')"><div class="kv">35+</div><div class="kl">Models Maintained</div><div class="ks">DCF · 3-Statement</div></div>
+
         <div class="kpi" onclick="setFx('D4','=Earnings_Turnaround_Minutes → 30')"><div class="kv">30<span style="font-size:11px">min</span></div><div class="kl">Earnings Speed</div><div class="ks">Live Hedge Fund Data</div></div>
+
         <div class="kpi" onclick="setFx('E4','=COUNT(Masters_Degrees) → 2')"><div class="kv">2</div><div class="kl">Master's Degrees</div><div class="ks">Finance · Accountancy</div></div>
+
       </div>
+
       <div class="tagline-bar">
+
         <div class="tagline">Commerce student → Accountant → Institutional Finance Analyst → <span>Full-Stack Finance & Analytics Professional.</span> Every step was intentional. Every skill was earned.</div>
+
       </div>
+
       <div class="nav-hint">
+
         <span class="nh">Explore →</span>
+
         <div class="nh-tabs">
+
           <span class="nh-tab" onclick="goTab(1)">📊 Career P&L</span>
+
           <span class="nh-tab" onclick="goTab(2)">⚙️ Skills</span>
+
           <span class="nh-tab" onclick="goTab(3)">🗂 Projects</span>
+
           <span class="nh-tab" onclick="goTab(4)">🏆 Leadership</span>
+
           <span class="nh-tab" onclick="goTab(5)">👤 About Me</span>
+
         </div>
+
       </div>
+
     </div>
+
+
 
     <!-- SHEET 1: CAREER P&L -->
+
     <div class="sheet" id="s1">
+
       <div class="tbl-wrap">
+
         <table class="pl">
+
           <thead><tr><th colspan="6" style="padding:13px 16px;font-size:12px;color:var(--gold);text-align:left;background:var(--navy2)">CAREER INCOME STATEMENT &nbsp;·&nbsp; <span style="color:var(--muted);font-weight:400;font-size:10px">Value generated per role — the intentional journey from Commerce to Analytics</span></th></tr>
+
           <tr><th style="min-width:190px">Line Item</th><th>Ashok Jha</th><th>Insync Analytics</th><th>SCU MSFA</th><th>Bright Mind</th><th>Total</th></tr></thead>
+
           <tbody>
+
           <tr class="sr"><td colspan="6">REVENUE — Skills Acquired Per Role</td></tr>
+
           <tr><td style="padding-left:22px;color:var(--muted)">Accounting & Bookkeeping</td><td><span class="bdg bg">Core</span></td><td><span class="bdg bg">Applied</span></td><td><span class="bdg bg">Mastered</span></td><td><span class="bdg bg">Leading</span></td><td><span class="bdg bo">✓ Mastered</span></td></tr>
+
           <tr><td style="padding-left:22px;color:var(--muted)">Financial Modeling (DCF / 3-Stmt)</td><td><span class="bdg bm">—</span></td><td><span class="bdg bg">15–20 built</span></td><td><span class="bdg bg">Advanced</span></td><td><span class="bdg bg">Applied</span></td><td><span class="bdg bo">✓ Advanced</span></td></tr>
+
           <tr><td style="padding-left:22px;color:var(--muted)">Python · SQL · Tableau</td><td><span class="bdg bm">—</span></td><td><span class="bdg bm">—</span></td><td><span class="bdg bb">Coursework</span></td><td><span class="bdg bb">Projects</span></td><td><span class="bdg bb">Proficient</span></td></tr>
+
           <tr><td style="padding-left:22px;color:var(--muted)">FP&A / Budgeting / Forecasting</td><td><span class="bdg bm">—</span></td><td><span class="bdg bm">—</span></td><td><span class="bdg bb">Theory</span></td><td><span class="bdg bg">FY2026 Live</span></td><td><span class="bdg bb">Hands-on</span></td></tr>
+
           <tr><td style="padding-left:22px;color:var(--muted)">AI-Augmented Analysis</td><td><span class="bdg bm">—</span></td><td><span class="bdg bm">—</span></td><td><span class="bdg bm">—</span></td><td><span class="bdg bg">Active</span></td><td><span class="bdg bb">Growing</span></td></tr>
+
           <tr class="sr"><td colspan="6">GROSS PROFIT — Unique Competitive Edge</td></tr>
+
           <tr><td style="padding-left:22px;color:var(--muted)">Institutional Finance Depth</td><td colspan="4" style="color:var(--text);font-size:11px">Buy-side hedge fund delivery · 30-min post-earnings · 8,000+ global model database</td><td><span class="bdg bo">High</span></td></tr>
+
           <tr><td style="padding-left:22px;color:var(--muted)">Dual Master's Premium</td><td colspan="4" style="color:var(--text);font-size:11px">MS Finance & Analytics (SCU) + M.Com Advanced Accountancy (Hinduja) — rare combination</td><td><span class="bdg bo">High</span></td></tr>
+
           <tr><td style="padding-left:22px;color:var(--muted)">Cross-Cultural Adaptability</td><td colspan="4" style="color:var(--text);font-size:11px">Mumbai → San Jose · International finance exposure · Relocated for academic excellence</td><td><span class="bdg bo">High</span></td></tr>
+
           <tr class="tr"><td colspan="5" style="color:var(--gold);font-size:12px">NET INCOME — The Hire Thesis</td><td><span class="bdg bo">▲ BUY</span></td></tr>
+
           <tr class="qr"><td colspan="6">"I don't just build models — I understand the business behind every number. Commerce → Accounting → Institutional Finance → Analytics. Each career move was intentional upskilling, not job-hopping. I came to the US specifically to bridge traditional finance with modern data analytics — because I saw that was the future."</td></tr>
+
           </tbody>
+
         </table>
+
       </div>
+
     </div>
+
+
 
     <!-- SHEET 2: SKILLS -->
+
     <div class="sheet" id="s2">
+
       <div class="sk-section">
+
         <div class="sk-title">Technical Skills</div>
+
         <div class="sk-grid">
+
           <div class="srow"><span class="sname">Excel (VBA / Macros)</span><div class="sbg"><div class="sbar" data-w="88" style="background:linear-gradient(90deg,var(--gold),var(--gold2))"></div></div><span class="spct">88%</span></div>
+
           <div class="srow"><span class="sname">Financial Modeling</span><div class="sbg"><div class="sbar" data-w="85" style="background:linear-gradient(90deg,var(--gold),var(--gold2))"></div></div><span class="spct">85%</span></div>
+
           <div class="srow"><span class="sname">DCF Valuation</span><div class="sbg"><div class="sbar" data-w="83" style="background:linear-gradient(90deg,var(--gold),var(--gold2))"></div></div><span class="spct">83%</span></div>
+
           <div class="srow"><span class="sname">FP&A / Budgeting</span><div class="sbg"><div class="sbar" data-w="76" style="background:linear-gradient(90deg,#10b981,#34d399)"></div></div><span class="spct">76%</span></div>
+
           <div class="srow"><span class="sname">QuickBooks / SAP</span><div class="sbg"><div class="sbar" data-w="78" style="background:linear-gradient(90deg,#10b981,#34d399)"></div></div><span class="spct">78%</span></div>
+
           <div class="srow"><span class="sname">SQL</span><div class="sbg"><div class="sbar" data-w="72" style="background:linear-gradient(90deg,var(--blue),#93c5fd)"></div></div><span class="spct">72%</span></div>
+
           <div class="srow"><span class="sname">Tableau</span><div class="sbg"><div class="sbar" data-w="70" style="background:linear-gradient(90deg,var(--blue),#93c5fd)"></div></div><span class="spct">70%</span></div>
+
           <div class="srow"><span class="sname">Python</span><div class="sbg"><div class="sbar" data-w="68" style="background:linear-gradient(90deg,var(--blue),#93c5fd)"></div></div><span class="spct">68%</span></div>
+
           <div class="srow"><span class="sname">Salesforce</span><div class="sbg"><div class="sbar" data-w="65" style="background:linear-gradient(90deg,var(--blue),#93c5fd)"></div></div><span class="spct">65%</span></div>
+
           <div class="srow"><span class="sname">PowerPoint</span><div class="sbg"><div class="sbar" data-w="80" style="background:linear-gradient(90deg,#10b981,#34d399)"></div></div><span class="spct">80%</span></div>
+
         </div>
+
       </div>
+
       <div class="sk-section">
+
         <div class="sk-title">Soft Skills & Character</div>
+
         <div class="soft-grid">
+
           <div class="soft-card"><div class="soft-icon">🔍</div><div class="soft-name">Intellectual Curiosity</div><div class="soft-desc">Moved from accounting to analytics because I wanted to understand more. Always asking why, not just how.</div></div>
+
           <div class="soft-card"><div class="soft-icon">🚀</div><div class="soft-name">Self-Driven Growth</div><div class="soft-desc">Every career move was self-initiated. Saw the future of finance and built skills deliberately to get there.</div></div>
+
           <div class="soft-card"><div class="soft-icon">⚡</div><div class="soft-name">Speed Under Pressure</div><div class="soft-desc">Delivered live consensus data to hedge fund PMs 30 min post-earnings. Zero margin for error.</div></div>
+
           <div class="soft-card"><div class="soft-icon">🌍</div><div class="soft-name">Adaptability</div><div class="soft-desc">Moved countries, changed industries, learned new tools — and thrived in each environment.</div></div>
+
           <div class="soft-card"><div class="soft-icon">🔧</div><div class="soft-name">Process Builder</div><div class="soft-desc">Designed scalable workflows for a 40-member team from scratch at Bright Mind Enrichment.</div></div>
+
           <div class="soft-card"><div class="soft-icon">🤝</div><div class="soft-name">Cross-Functional</div><div class="soft-desc">Works across finance, ops, and tech teams. Translates numbers into language everyone understands.</div></div>
+
         </div>
+
       </div>
+
     </div>
+
+
 
     <!-- SHEET 3: PROJECTS -->
+
     <div class="sheet" id="s3">
+
       <div class="proj-list">
+
         <div class="pcard done">
+
           <div class="ph"><span class="pnum">EXHIBIT A · SCU Practicum · 2025</span><span class="bdg bg">✓ Complete</span></div>
+
           <div class="ptitle">Financial Benchmarking · <span class="pticker">Extreme Networks (EXTR)</span></div>
+
           <div class="pdesc">Benchmarking model analyzing growth, profitability and valuation metrics across 32 peer companies using Excel and S&P Capital IQ. Delivered strategic recommendations via interactive Tableau dashboards to support executive resource allocation at the SCU Leavey School of Business practicum.</div>
+
           <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+
             <div class="ptools"><span class="tool">Excel</span><span class="tool">S&P Capital IQ</span><span class="tool">Tableau</span></div>
+
             <span style="font-size:10px;color:var(--green)">32 peer companies · Executive Tableau dashboard · Complete</span>
+
           </div>
+
         </div>
+
         <div class="pcard wip">
+
           <div class="ph"><span class="pnum">EXHIBIT B · Portfolio Project · 2026</span><span class="bdg bb">⚡ In Progress</span></div>
+
           <div class="ptitle">Public Company Financial Analysis · <span class="pticker">Chewy Inc. (CHWY) — NASDAQ</span></div>
+
           <div class="pdesc">End-to-end analysis: SEC EDGAR API → Python data pull → SQLite database → 3-statement model → DCF valuation → Tableau dashboard. Revenue story: $2.1B → $11.1B over 6 years. First ever profitable year FY2024 — analysing the profitability turnaround thesis with full data pipeline built from scratch.</div>
+
           <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+
             <div class="ptools"><span class="tool">Python</span><span class="tool">SQL</span><span class="tool">Excel</span><span class="tool">Tableau</span><span class="tool">SEC EDGAR API</span></div>
+
             <!-- UPDATE THIS LINK WHEN YOUR GITHUB IS LIVE -->
+
             <a class="plink" href="https://github.com/devinyaupane" target="_blank">GitHub → Coming Soon ↗</a>
+
           </div>
+
         </div>
+
         <div class="pcard plan">
+
           <div class="ph"><span class="pnum">EXHIBIT C · Portfolio Project · 2026</span><span class="bdg bm">◷ Planned</span></div>
+
           <div class="ptitle">FP&A Simulation · <span class="pticker">SaaS Company Budget Model</span></div>
+
           <div class="pdesc">Full FY budget model for a simulated SaaS company — revenue forecasting, budget vs actuals, variance analysis and an executive Tableau dashboard. Directly mirrors live FP&A work at Bright Mind Enrichment (FY2026 budget, 15+ categories, QuickBooks + Salesforce integration).</div>
+
           <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+
             <div class="ptools"><span class="tool">Python</span><span class="tool">SQL</span><span class="tool">Excel</span><span class="tool">Tableau</span><span class="tool">QuickBooks</span></div>
+
             <span style="font-size:10px;color:var(--muted)">Coming soon</span>
+
           </div>
+
         </div>
+
       </div>
+
     </div>
+
+
 
     <!-- SHEET 4: LEADERSHIP -->
+
     <div class="sheet" id="s4">
+
       <div class="lead-section">
+
         <div class="lead-title">Leadership Roles</div>
+
         <div class="lead-cards">
+
           <div class="lcard"><div class="lcard-icon">🌿</div><div class="lcard-title">NSS Core Committee</div><div class="lcard-org">K.P.B. Hinduja College · Bachelor's</div><div class="lcard-desc">National Service Scheme core committee member. Led community service initiatives, coordinating student volunteers for social impact programs across Mumbai.</div></div>
+
           <div class="lcard"><div class="lcard-icon">👥</div><div class="lcard-title">DLLE Student Manager</div><div class="lcard-org">K.P.B. Hinduja College · Bachelor's</div><div class="lcard-desc">Department of Lifelong Learning & Extension student manager. Managed cross-departmental programs, student engagement and community outreach coordination.</div></div>
+
           <div class="lcard"><div class="lcard-icon">🎓</div><div class="lcard-title">MS Program Ambassador</div><div class="lcard-org">Santa Clara University · MSFA 2024–25</div><div class="lcard-desc">Official student ambassador for the MS Finance & Analytics program at SCU Leavey School of Business. Represented the program to prospective students and the broader academic community.</div></div>
+
         </div>
+
       </div>
+
       <div class="lead-section">
+
         <div class="lead-title">Education — Three Degrees, One Deliberate Arc</div>
+
         <div class="edu-cards">
+
           <div class="ecard">
+
             <div class="ecard-deg">MS Finance & Analytics</div>
+
             <div class="ecard-school">Santa Clara University · Leavey School of Business</div>
+
             <div class="ecard-date">Sep 2024 – Dec 2025 · Santa Clara, CA</div>
+
             <div class="ecard-note">Coursework: Financial Forecasting & Analysis · Investments · Python · SQL · Tableau · FP&A<br>Student Ambassador · Extreme Networks Practicum</div>
+
           </div>
+
           <div class="ecard">
+
             <div class="ecard-deg">M.Com — Advanced Accountancy</div>
+
             <div class="ecard-school">K.P.B. Hinduja College of Commerce</div>
+
             <div class="ecard-date">Jul 2022 – May 2024 · Mumbai, India</div>
+
             <div class="ecard-note">Advanced accountancy, auditing, taxation and financial reporting. Completed while working full-time as Junior Accountant — exceptional discipline and work ethic.</div>
+
           </div>
+
           <div class="ecard blue">
+
             <div class="ecard-deg">B.Com — Commerce</div>
+
             <div class="ecard-school">K.P.B. Hinduja College of Commerce</div>
+
             <div class="ecard-date">Jul 2019 – May 2022 · Mumbai, India</div>
+
             <div class="ecard-note">Foundation in accounting, economics, business law and commerce. NSS Core Committee · DLLE Student Manager.</div>
+
           </div>
+
           <div class="ecard green-card">
+
             <div class="ecard-deg" style="color:var(--green)">What Three Degrees Means</div>
+
             <div class="ecard-school" style="color:var(--muted)">The Full Picture</div>
+
             <div class="ecard-date"></div>
+
             <div class="ecard-note">Traditional commerce foundation → Advanced accountancy mastered while working full-time → Modern finance & analytics at a US university. Each degree built on the last. This is not a collection of degrees — it is a deliberate, self-driven upskilling arc spanning 6 years.</div>
+
           </div>
+
         </div>
+
       </div>
+
     </div>
 
+
+
     <!-- SHEET 5: ABOUT ME -->
+
     <div class="sheet" id="s5">
+
       <div class="about-hero">
+
         <div class="about-photo">DN
+
           <!-- REPLACE WITH PHOTO IF DESIRED:
+
           <img src="photo.jpg" alt="Devi Nyaupane">
+
           -->
+
         </div>
-        <div class="about-intro" style="color:rgba(255,255,255,0.9)">
+
+        <div class="about-intro">
+
           Hi, I'm <span>Devi</span> — originally from Mumbai, now based in San Jose. I moved to the US to bridge two worlds: <span>traditional finance depth</span> and <span>modern data analytics</span>. I believe the best analysts don't just run numbers — they understand the story behind them, communicate it clearly, and use the right tools to surface insights others miss. Outside of spreadsheets, I love exploring — whether that's a new hiking trail, a dance floor, a new city, or a new recipe.
+
         </div>
+
       </div>
+
       <div class="int-grid">
+
         <div class="int-card"><div class="int-icon">🥾</div><div class="int-name">Hiking</div><div class="int-desc">Bay Area trails. Love the clarity that comes after a long climb.</div></div>
+
         <div class="int-card"><div class="int-icon">💃</div><div class="int-name">Dancing</div><div class="int-desc">Movement is expression. On the dance floor I'm completely free.</div></div>
+
         <div class="int-card"><div class="int-icon">✈️</div><div class="int-name">Travel</div><div class="int-desc">Mumbai → San Jose is just the beginning. New places = new perspectives.</div></div>
+
         <div class="int-card"><div class="int-icon">🍳</div><div class="int-name">Cooking</div><div class="int-desc">Experimenting in the kitchen — same curiosity I bring to data problems.</div></div>
+
       </div>
+
       <div class="why-grid">
+
         <div class="why-card"><div class="why-t">Why Finance?</div><div class="why-p">I started in accounting because I wanted to understand how businesses work from the inside. Then I realized there was a whole analytical layer — the "why behind the numbers" — that I hadn't touched. That curiosity is what drove me first to analytics and then to SCU.</div></div>
+
         <div class="why-card"><div class="why-t">Why Analytics?</div><div class="why-p">At Insync, I saw Python and AI changing how financial analysis gets done. I could either watch it happen or be part of it. I chose to be part of it. The MSFA was deliberate — I wanted to be the analyst who bridges both worlds, not just one.</div></div>
+
         <div class="why-card"><div class="why-t">What Drives Me</div><div class="why-p">Curiosity. The need to explore and understand deeply. I'm not satisfied with just running the numbers — I want to know what they mean, what story they tell, and what decision they should drive. That's why I'm building portfolio projects, not just updating a resume.</div></div>
+
         <div class="why-card"><div class="why-t">What I'm Looking For</div><div class="why-p">A team that values both financial rigor and analytical thinking. A place where I can build models AND build dashboards. FP&A, Financial Analyst, or Data Analyst roles where I can grow into a senior analytical leadership position over the next 3–5 years.</div></div>
+
       </div>
+
       <div class="contact-section">
+
         <div class="contact-title">Contact & Links</div>
+
         <div class="contact-grid">
+
           <div class="c-card"><div class="c-icon">✉</div><div><div class="c-label">Email</div><div class="c-val"><a href="mailto:devinyaupane1@gmail.com">devinyaupane1@gmail.com</a></div></div></div>
+
           <div class="c-card"><div class="c-icon">📱</div><div><div class="c-label">Phone</div><div class="c-val">408-663-7280</div></div></div>
+
           <div class="c-card"><div class="c-icon">in</div><div><div class="c-label">LinkedIn</div><div class="c-val"><a href="https://linkedin.com/in/devi-nyaupane/" target="_blank">devi-nyaupane ↗</a></div></div></div>
+
           <div class="c-card"><div class="c-icon">gh</div><div><div class="c-label">GitHub</div><div class="c-val"><a href="https://github.com/devinyaupane" target="_blank">devinyaupane ↗</a></div></div></div>
+
         </div>
+
       </div>
+
     </div>
+
+
 
   </div><!-- end viewport -->
 
+
+
   <!-- TABS -->
+
   <div class="tab-bar">
+
     <div class="tab active" onclick="goTab(0)"><span class="tdot" style="background:var(--green);animation:pulse 2s infinite"></span> Cover</div>
+
     <div class="tab" onclick="goTab(1)">📊 Career P&L</div>
+
     <div class="tab" onclick="goTab(2)">⚙️ Skills</div>
+
     <div class="tab" onclick="goTab(3)">🗂 Projects <span class="tdot" style="background:var(--blue);margin-left:2px"></span></div>
+
     <div class="tab" onclick="goTab(4)">🏆 Leadership</div>
+
     <div class="tab" onclick="goTab(5)">👤 About Me</div>
+
   </div>
 
+
+
   <!-- STATUS BAR -->
+
   <div class="sbar">
+
     <span class="st" id="stxt">Ready · Sheet 1 of 6 · Click tabs to navigate · Try "Ask Me Anything" in the ribbon above</span>
+
     <div class="st-r">
+
       <span class="st">Open to Work</span>
+
       <span class="st">San Jose, CA</span>
+
       <span class="st">100%</span>
+
     </div>
+
   </div>
+
+
 
 </div><!-- end .wb -->
 
+
+
 <script>
+
 let cur=0,animating=false;
+
 const tabs=document.querySelectorAll('.tab');
+
 const sheets=document.querySelectorAll('.sheet');
+
 const names=['Cover','Career P&L','Skills','Projects','Leadership','About Me'];
+
 const formulas=[
+
   '="Devi Nyaupane | Financial Analyst | FP&A | Data Analytics | Open to Work"',
+
   '=SUM(CareerValue_AllRoles) → NET_INCOME: The Hire Thesis',
+
   '=Skills.Technical + Skills.Soft → Full_Package',
+
   '=Projects.Status → [Complete | InProgress | Planned]',
+
   '=Leadership + Education → Three_Degrees_One_Arc',
+
   '=About.Human → Curious_Explorer_Finance_Nerd'
+
 ];
 
+
+
 function goTab(idx){
-  if(idx===cur)return;
+
+  if(idx===cur||animating)return;
+
+  animating=true;
+
   const prev=cur; cur=idx;
-  // update tabs
+
   tabs.forEach((t,i)=>t.classList.toggle('active',i===idx));
-  // hide ALL sheets instantly, then show target
-  sheets.forEach((s,i)=>{
-    if(i===prev){
-      s.classList.remove('active');
-      s.style.cssText='opacity:0;pointer-events:none;transform:translateX(0)';
-    } else if(i!==idx){
-      s.classList.remove('active');
-      s.style.cssText='opacity:0;pointer-events:none;';
+
+  const goRight=idx>prev;
+
+  // exit current
+
+  sheets[prev].classList.add(goRight?'exit-l':'');
+
+  sheets[prev].style.transform=goRight?'translateX(-60px)':'translateX(60px)';
+
+  sheets[prev].style.opacity='0';
+
+  setTimeout(()=>{
+
+    sheets[prev].classList.remove('active','exit-l');
+
+    sheets[prev].style.transform='';
+
+    sheets[prev].style.opacity='';
+
+    sheets[prev].style.pointerEvents='none';
+
+  },350);
+
+  // enter new
+
+  sheets[idx].style.transform=goRight?'translateX(60px)':'translateX(-60px)';
+
+  sheets[idx].style.opacity='0';
+
+  sheets[idx].style.pointerEvents='none';
+
+  setTimeout(()=>{
+
+    sheets[idx].classList.add('active');
+
+    sheets[idx].style.transform='translateX(0)';
+
+    sheets[idx].style.opacity='1';
+
+    sheets[idx].style.pointerEvents='all';
+
+    // animate skill bars when skills tab opens
+
+    if(idx===2){
+
+      document.querySelectorAll('.sbar[data-w]').forEach(b=>{
+
+        b.style.width='0';
+
+        setTimeout(()=>{b.style.width=b.dataset.w+'%'},100);
+
+      });
+
     }
-  });
-  // show new sheet with fade
-  const target=sheets[idx];
-  target.style.cssText='opacity:0;pointer-events:none;transform:translateX(0)';
-  target.classList.add('active');
-  requestAnimationFrame(()=>{
-    requestAnimationFrame(()=>{
-      target.style.cssText='opacity:1;pointer-events:all;transform:translateX(0);transition:opacity 0.25s ease';
-      // animate skill bars when skills tab opens
-      if(idx===2){
-        document.querySelectorAll('.sbar[data-w]').forEach(b=>{
-          b.style.width='0';
-          setTimeout(()=>{b.style.width=b.dataset.w+'%'},100);
-        });
-      }
-    });
-  });
+
+    animating=false;
+
+  },50);
+
   document.getElementById('fref').textContent='A1';
+
   document.getElementById('fval').textContent=formulas[idx];
+
   document.getElementById('stxt').textContent='Ready · Sheet '+(idx+1)+' of 6: '+names[idx]+' · Use ribbon to interact';
+
 }
+
+
 
 function setFx(ref,f){
+
   document.getElementById('fref').textContent=ref;
+
   document.getElementById('fval').textContent=f;
+
 }
+
+
 
 // Animate skill bars on page load if skills is first tab (it's not, but just in case)
+
 window.addEventListener('load',()=>{
+
   // slight delay so CSS transition kicks in
+
   setTimeout(()=>{
+
     if(cur===2) document.querySelectorAll('.sbar[data-w]').forEach(b=>b.style.width=b.dataset.w+'%');
+
   },300);
+
 });
+
+
 
 // QA responses
+
 const qa={
+
   hire:"Here's my pitch: I bring something rare — traditional accounting depth (30+ clients, 500+ monthly entries), institutional finance experience (hedge fund delivery, 15–20 models built, 55+ companies), AND modern analytics (Python, SQL, Tableau) from an MSFA at SCU. Most analysts have one of those. I have all three. Plus I'm actively building portfolio projects — not just updating a resume.",
+
   master:"I have two master's degrees: MS Finance & Analytics from Santa Clara University (2024–25, GPA-track, Student Ambassador) and M.Com in Advanced Accountancy from K.P.B. Hinduja College, Mumbai (2022–24). The M.Com was completed while working full-time as a Junior Accountant — that level of discipline is how I approach everything.",
+
   tool:"Excel (VBA/Macros) for modeling · Python (pandas, matplotlib, SEC EDGAR API) · SQL (SQLite for financial databases) · Tableau (executive dashboards, Tableau Public) · QuickBooks, SAP, Salesforce in active use at Bright Mind. Currently building a full Chewy Inc. financial analysis using all of these tools end-to-end.",
+
   project:"Three projects: [1] Extreme Networks benchmarking — 32 peer companies, executive Tableau dashboard, SCU Leavey practicum (complete). [2] Chewy Inc. NASDAQ analysis — SEC EDGAR pull via Python, SQLite database, 3-statement model + DCF valuation, Tableau dashboard (in progress). [3] FP&A SaaS simulation — budget model, variance analysis (planned).",
+
   background:"Started in Mumbai — B.Com at Hinduja, then Junior Accountant while doing M.Com simultaneously. Moved into financial data analysis at Insync Analytics (building models for buy-side hedge fund clients). Then relocated to the US for an MSFA at Santa Clara University — deliberately bridging traditional finance with modern analytics. Now Financial Analyst at Bright Mind Enrichment.",
+
   python:"Using Python for: pulling SEC EDGAR XBRL financial data (active on Chewy project), pandas for data cleaning and analysis, matplotlib for visualization, sqlite3 for database storage. Learned during MSFA at SCU coursework, now applying to real portfolio projects to deepen proficiency.",
+
   sql:"SQL for financial data storage and querying. Currently building a SQLite database for the Chewy project — tables for income_statement, balance_sheet, cash_flows, and KPIs. Then querying with SELECT, JOIN, GROUP BY, and window functions to surface trends.",
+
   fpa:"Actively doing FP&A right now at Bright Mind Enrichment — managing the FY2026 annual budget across 15+ revenue and expenditure categories in QuickBooks, coordinating Salesforce integration, and using AI tools to reduce manual preparation time in monthly planning cycles.",
+
   interest:"Outside of finance I love hiking (Bay Area trails), dancing, travelling (Mumbai to San Jose is just the start!), and cooking. Same curiosity I bring to data problems applies to everything I do.",
+
   default:"Great question! The short answer: I bridge traditional finance depth with modern analytics — something most finance teams need but rarely find. Want to know about a specific skill, project, my background, or why I made the transition from Mumbai to San Jose?"
+
 };
 
+
+
 function ask(){
+
   const q=(document.getElementById('askIn').value||'').toLowerCase();
+
   const out=document.getElementById('aout');
+
   let r=qa.default;
+
   if(q.includes('hire')||q.includes('why')||q.includes('choose')||q.includes('different'))r=qa.hire;
+
   else if(q.includes('master')||q.includes('degree')||q.includes('mcom')||q.includes('mba')||q.includes('education'))r=qa.master;
+
   else if(q.includes('python'))r=qa.python;
+
   else if(q.includes('sql'))r=qa.sql;
+
   else if(q.includes('fpa')||q.includes('fp&a')||q.includes('budget')||q.includes('forecast'))r=qa.fpa;
+
   else if(q.includes('project')||q.includes('chewy')||q.includes('extreme'))r=qa.project;
+
   else if(q.includes('background')||q.includes('career')||q.includes('story')||q.includes('journey')||q.includes('mumbai'))r=qa.background;
+
   else if(q.includes('tool')||q.includes('skill')||q.includes('excel')||q.includes('tableau'))r=qa.tool;
+
   else if(q.includes('hobby')||q.includes('interest')||q.includes('hik')||q.includes('danc')||q.includes('travel'))r=qa.interest;
+
   out.textContent='→ '+r;
+
   out.classList.remove('show');
+
   void out.offsetWidth;
+
   out.classList.add('show');
+
   document.getElementById('fval').textContent='=QUERY(Devi,"'+document.getElementById('askIn').value+'") → See result below';
+
 }
+
+
 
 function showFilter(m){
+
   const o=document.getElementById('fout');
+
   o.textContent='→ '+m;
+
   o.classList.remove('show');void o.offsetWidth;o.classList.add('show');
+
 }
+
 function showHire(m){
+
   const o=document.getElementById('hout');
+
   o.textContent=m;
+
   o.classList.remove('show');void o.offsetWidth;o.classList.add('show');
+
 }
+
+
 
 function toggleRb(id){
+
   const ids=['ask','view','filter','hire'];
+
   ids.forEach(k=>{
+
     const p=document.getElementById('rp-'+k);
+
     const r=document.getElementById('rb-'+k);
+
     const willOpen=k===id&&!p.classList.contains('open');
+
     p.classList.toggle('open',willOpen);
+
     r.classList.toggle('arb',willOpen);
+
   });
+
 }
 
+
+
 // Keyboard navigation
+
 document.addEventListener('keydown',e=>{
+
   if(e.target.tagName==='INPUT')return;
+
   if(e.key==='ArrowRight'&&cur<5)goTab(cur+1);
+
   if(e.key==='ArrowLeft'&&cur>0)goTab(cur-1);
+
 });
+
 </script>
+
 </body>
-</html>
+
+</html> 
+
